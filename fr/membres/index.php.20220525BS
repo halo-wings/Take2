@@ -1,0 +1,144 @@
+<?php
+$langue = 'fr';
+$section = "members";
+$sous_section = "";
+$title = "";
+$meta_description = "";
+$meta_keywords = "";
+
+include($_SERVER['DOCUMENT_ROOT']."/".$langue."/inc/header.php");
+?>
+	<div class="content members">
+		<div class="left">
+			<img src="../../images/img_gauche_members.jpg" alt="Membres" />
+			<a href="../recherche/projets.php" id="projects" title="Projets">Projets</a>
+			<a href="../recherche/publications.php" id="publications" title="Publications">Publications</a>
+		</div>
+		<div class="right">
+			<div class="container_sous_menu" style="display: none;">
+				<?php include($_SERVER['DOCUMENT_ROOT'].'/'.$langue.'/inc/menu.php'); ?>
+			</div>
+			<section>
+				<div class="wrapper">
+				<h1>Membres</h1>
+				<h2>Chef de groupe</h2>
+				<p><strong>Martin Rochette, PhD, Ing</strong><br />
+				Professeur titulaire<br />
+				T&eacute;l&eacute;phone : 514 398-3037<br />
+				Fax : 514 398-4470<br />
+				<a href="mailto:martin.rochette@mcgill.ca">martin.rochette@mcgill.ca</a></p>
+				
+				<h2>&Eacute;tudiants</h2>
+				
+				<img src="/images/membres/imtiaz.jpg" alt="Imtiaz Alamgir" />
+				<p><strong>Imtiaz Alamgir, candidat au PhD</strong><br />
+				Sources laser &agrave; fibre<br />
+				MSc, Karlsruhe School of Optics & Photonics, Karlsruhe Institute of Technology, Germany, 2015<br />
+BSc, Dept. of Electrical and Electronic Engineering, Ahsanullah University of Science and Technology, Bangladesh, 2016
+<br />
+				<a href="mailto:md.alamgir@mail.mcgill.ca">md.alamgir@mail.mcgill.ca</a></p>
+				
+				<img src="/images/membres/anjum.jpg" alt="Arslan Anjum" />
+				<p><strong>Arslan Anjum, candidat au PhD</strong><br />
+				Lasers &agrave; fibre infrarouge-moyen <br />
+				MSc, Masdar Institute of Science and Technology, United Arab Emirates, 2016<br />
+BSc, School of Science and Engineering, Lahore University of Management Sciences (LUMS), Pakistan, 2013<br />
+
+				<a href="mailto:arslan.anjum@mail.mcgill.ca">arslan.anjum@mail.mcgill.ca</a></p>
+				
+				<img src="/images/membres/kormokar.jpg" alt="Robi Kormokar" />
+				<p><strong>Robi Kormokar, candidat au PhD</strong><br />
+				Int&eacute;gration de composants optique &agrave; fibre<br />
+				MSc, Department of Physics, Shahjalal University of Science and Technology, Bangladesh, 2017<br />
+				BSc, Department of Physics, Shahjalal University of Science and Technology, Bangladesh, 2015<br />
+				<a href="mailto:Robi.kormokar@mail.mcgill.ca">Robi.kormokar@mail.mcgill.ca</a></p>
+				
+				<img src="/images/membres/weixuan.jpg" alt="Weixuan Lin" />
+				<p><strong>Weixuan Lin, candidat au PhD</strong><br />
+				Lasers &agrave; fibre de haute puissance<br />
+				MEng, Dept. of Electrical and Computer Engineering, McGIll University, 2019
+<br />
+				BSc, Dept. of Applied Physics, Shantou University, 2016<br />
+				<a href="mailto:weixuan.lin@mail.mcgill.ca">weixuan.lin@mail.mcgill.ca</a></p>
+				
+				<img src="/images/membres/lyu.jpg" alt="Yanjia Lyu" />
+				<p><strong>Yanjia Lyu, candidat au PhD</strong><br />
+				Lasers &agrave; fibre infrarouge moyen<br />
+				PhD en collaboration avec le Department of Optical Engineering, University of Electronic Science and Technology of China<br />
+				BSc, Department of Optical Engineering, University of Electronic Science and Technology of China, 2014<br />
+				<a href="mailto:yanjia.Lyu@mail.mcgill.ca">yanjia.Lyu@mail.mcgill.ca</a></p>
+				
+				
+
+				<img src="/images/membres/amin.jpg" alt="Md Rasheduzzaman Al-Amin" />
+				<p><strong>Md Rasheduzzaman Al-Amin, candidat au PhD</strong><br />
+				Lasers &agrave; fibre<br />
+				MSc, Dept. of Electrical and Electronic Engineering, Islamic University of Technology, Bangladesh, 2016<br>
+				BSc, Dept. of Electrical and Electronic Engineering, Islamic University of Technology, Bangladesh, 2011<br />
+				<a href="mailto:md.al-amin@mail.mcgill.ca">md.al-amin@mail.mcgill.ca</a></p>
+				
+				<img src="/images/membres/mohsen.jpg" alt="Mohsen Rezaei" />
+				<p><strong>Mohsen Rezaei, candidat au PhD</strong><br />
+				Composants &agrave; fibre optique<br />
+                MSc, Dept. of Electrical and Computer Engineering, Isfahan University of Technology, Iran, 2016<br />
+				BSc, Dept. of Electrical and Computer Engineering, Isfahan University of Technology, Iran, 2013<br />
+				<a href="mailto:mohsen.rezaei@mail.mcgill.ca">mohsen.rezaei@mail.mcgill.ca</a></p>
+
+				
+				<img src="/images/membres/shamim.jpg" alt="Md Hosne Mobarok Shamim" />
+				<p><strong>Md Hosne Mobarok Shamim, candidat au PhD</strong><br />
+				Sources supercontinua<br />
+				MSc, Department of Electrical Engineering, King Fahd University of Petroleum & Minerals, Saudi Arabia, 2018<br />
+				BSc, Department of Electrical and Electronic Engineering, Islamic University of Technology, Bangladesh, 2013<br />
+				<a href="mailto:hosne.shamim@mail.mcgill.ca">hosne.shamim@mail.mcgill.ca</a></p>
+		
+				
+				<img src="/images/membres/kaixuan.jpg" alt="Kaixuan Zhang" />
+				<p><strong>Kaixuan Zhang, candidat au PhD</strong><br />
+				Micro-r&eacute;sonateurs<br />
+				BEng, College of Optical Science and Engineering, Zhejiang University, 2015<br />
+				<a href="mailto:kaixuan.zhang@mail.mcgill.ca">kaixuan.zhang@mail.mcgill.ca</a></p>	
+				
+				
+				
+				<p>&nbsp;</p>
+				<img src="/images/membres/wasim.jpg" alt="Wasim Firdaus" />
+				<p><strong>Wasim Firdaus, candidat au MEng</strong><br />
+				R&eacute;duction du bruit des lasers &agrave; fibre<br />
+				BSc, Dept. of Electrical and Electronic Engineering, Islamic University of Technology, Bangladesh, 2015<br />
+				<a href="mailto:md.lashkor@mail.mcgill.ca">md.lashkor@mail.mcgill.ca</a></p>
+				
+				<img src="/images/membres/najmul.jpg" alt="Najmul Islam" />
+				<p><strong>Md. Najmul Islam, candidat au MEng</strong><br />
+				Lasers &agrave; fibre pour l'infrarouge moyen<br />
+				BSc, Dept. of Electrical and Electronic Engineering, Islamic University of Technology, Bangladesh, 2014<br />
+				<a href="mailto:md.n.islam@mail.mcgill.ca">md.n.islam@mail.mcgill.ca</a></p>
+				
+				<img src="/images/membres/sainthilaire.jpg" alt="Fran&ccedil;ois Saint-Hilaire" />
+				<p><strong>Fran&ccedil;ois Saint-Hilaire, candidat au MEng<br />
+				</strong>G&eacute;n&eacute;ration de supercontinuum<br />
+				BEng, Department of Physics Engineering, École Polytechnique de Montr&eacute;al, Canada, 2017<br />
+				<a href="mailto:francois.st-hilaire3@mail.mcgill.ca">francois.st-hilaire3@mail.mcgill.ca</a></p>
+				
+			
+				
+				
+				<!--<p>&nbsp;</p>
+				<h2>&Eacute;tudiants collaborateurs </h2>
+				
+				<img src="/images/membres/francis.jpg" alt="Francis Vanier" />
+				<p><strong>Francis Vanier, &eacute;tudiant au PhD</strong><br />
+				&Eacute;cole Polytechnique de Montr&eacute;al<br />
+				Nonlinear resonators<br />
+				MASc, Dept. of Physics Engineering, &Eacute;cole Polytechnique de Montr&eacute;al, 2012<br />
+				BEng, Dept. of Physics Engineering, &Eacute;cole Polytechnique de Montr&eacute;al, 2009<br />
+				<a href="mailto:francis-2.vanier@polymtl.ca">francis-2.vanier@polymtl.ca</a></p>
+				
+				-->
+
+				</div>
+			</section>
+			
+<?php
+include($_SERVER['DOCUMENT_ROOT'].'/'.$langue.'/inc/footer.php');
+?>

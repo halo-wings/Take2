@@ -1,0 +1,125 @@
+<?php
+// ====================== BRUTE-FORCE PROTECTION (début) ======================
+$ip              = $_SERVER['REMOTE_ADDR'];
+$lockout_file    = '/tmp/login_lockout_' . md5($ip);
+
+// Si l'IP est bloquée temporairement
+if (file_exists($lockout_file)) {
+    $locked_until = (int)file_get_contents($lockout_file);
+    if (time() < $locked_until) {
+        die('<h2 style="color:red;">Accès temporairement bloqué</h2>
+             <p>Trop de tentatives de connexion échouées.<br>
+             Réessayez dans ' . round(($locked_until - time()) / 60) . ' minute(s).</p>');
+    } else {
+        unlink($lockout_file);               // blocage expiré → on nettoie
+    }
+}
+
+// Compteur d'échecs (seulement si le formulaire a été soumis)
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion'])) {
+    if (!isset($_SESSION)) session_start();
+    $fail_file = '/tmp/login_fail_' . md5($ip);
+    $fails = (file_exists($fail_file)) ? (int)file_get_contents($fail_file) : 0;
+    $_SESSION['temp_fails'] = $fails;        // on garde en mémoire pour plus tard
+}
+// ====================== FIN BRUTE-FORCE (partie 1) ======================
+
+require('../inc/functions.php');
+session_start();
+session_unset();
+session_destroy();
+
+$erreur = '';
+
+if (isset($_POST['connexion']) && $_POST['connexion'] == 'Se connecter') {
+    if ((isset($_POST['login']) && !empty($_POST['login'])) && (isset($_POST['pass']) && !empty($_POST['pass']))) {
+
+        $login = trim($_POST['login']);
+
+        // Validation basique du login (défense en profondeur)
+        if (!preg_match('/^[a-zA-Z0-9_]+$/', $login)) {
+            $erreur = 'Nom d\'utilisateur invalide.';
+        } else {
+            // REQUÊTE SÉCURISÉE (prepared statement) → plus d'injection SQL possible
+            $s_sql  = "SELECT password, id FROM login WHERE username = ?";
+            $result = SQL($s_sql, [$login]);
+
+            if ($result && $result->num_rows == 1) {
+                $data = $result->fetch_array(MYSQLI_NUM);
+
+                require '../inc/phpass-0.3/PasswordHash.php';
+                $t_hasher = new PasswordHash(8, FALSE);
+                $check    = $t_hasher->CheckPassword($_POST['pass'], $data[0]);
+
+                if ($check) {
+                    session_start();
+                    $_SESSION['login']     = $login;
+                    $_SESSION['idClient']  = $data[1];
+                    echo '<html><body onload="window.location=\'adminMenus.php\';"></body></html>';
+                    exit();
+                } else {
+                    $erreur = 'Mauvais mot de passe.';
+                }
+            } elseif ($result && $result->num_rows == 0) {
+                $erreur = 'Compte non reconnu.';
+            } else {
+                $erreur = 'Problème dans la base de données.';
+            }
+        }
+    } else {
+        $erreur = 'Au moins un des champs est vide.';
+    }
+
+    // ====================== BRUTE-FORCE PROTECTION (partie 2 - incrémentation) ======================
+    if (!isset($_SESSION)) session_start();
+    $fail_file    = '/tmp/login_fail_' . md5($ip);
+    $lockout_file = '/tmp/login_lockout_' . md5($ip);
+
+    $fails = $_SESSION['temp_fails'] ?? 0;
+
+    // On incrémente uniquement sur échec réel d'authentification
+    if ($erreur === 'Mauvais mot de passe.' || $erreur === 'Compte non reconnu.') {
+        $fails++;
+        file_put_contents($fail_file, $fails);
+
+        if ($fails >= 5) {
+            file_put_contents($lockout_file, time() + 3600);   // 15 minutes de blocage
+            @unlink($fail_file);
+            die('<h2 style="color:red;">Compte temporairement bloqué</h2>
+                 <p>Trop de tentatives échouées.<br>Réessayez dans 15 minutes.</p>');
+        }
+    }
+    unset($_SESSION['temp_fails']);
+    // ====================== FIN BRUTE-FORCE ======================
+}
+?>
+
+<?php $categorie = "-1"; ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ADMIN - McGill</title>
+<link rel="stylesheet" type="text/css" href="../inc/css/style.css" />
+<style type="text/css">
+body { font-size: 18px;}
+</style>
+</head>
+<body bgcolor="#CDCDCD">
+<center>
+<section style="padding: 0; float: none; width: 934px;">
+  <div style="width: 934px; margin: 0 auto; background-color: #fff; text-align: center;">
+      <div class="logo" style="padding: 20px; background: url(../images/logo_mcgill.jpg) no-repeat 20px 20px; width: 118px; height: 30px;">&nbsp;</div>
+
+<br /><br /><br /><br /><br /><br />
+<form name="formConnexion" action="index.php" method="post">
+    Username : <input type="text" value="" name="login" autocomplete="off">&nbsp;&nbsp;&nbsp;&nbsp;
+    Password : <input type="password" value="" name="pass" autocomplete="off">&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="submit" name="connexion" value="Se connecter">
+    <b><?php if (isset($erreur)) echo '<br /><br />'.$erreur; ?></b>
+</form>
+</div>
+</section>
+</center>
+</body>
+</html>

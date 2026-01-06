@@ -1,0 +1,56 @@
+<?php
+include($_SERVER['DOCUMENT_ROOT']."/inc/functions.php");
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title><?php if (isset($title) && $title != "") { echo $title; } else { echo "Groupe de recherche de Martin Rochette"; } ?></title>
+<meta name="description" content="<?php if (isset($meta_description) && $meta_description != "") { echo $meta_description; } else { echo "Groupe de recherche de Martin Rochette"; } ?>" />
+<meta name="keywords" content="<?php if (isset($meta_keywords) && $meta_keywords != "") { echo $meta_keywords; } else { echo "Martin Rochette"; } ?>" />
+
+<link rel="stylesheet" href="/inc/css/style.css" type="text/css" />
+<script type="text/javascript" src="/inc/js/jquery-1.8.3.min.js"></script>
+<link rel="stylesheet" href="/inc/js/colorbox/example1/colorbox.css" />
+<script src="/inc/js/colorbox/colorbox/jquery.colorbox.js"></script>
+<?php include($_SERVER['DOCUMENT_ROOT']."/inc/js/script.php"); ?>
+<style>
+#bande1 {
+	margin-left: 335px;
+}
+#bande2 {
+	margin-left: 420px;
+}
+#bande3 {
+	margin-left: 503px;
+}
+#bande4 {
+	margin-left: 580px;
+}
+</style>
+</head>
+
+<body class="body">
+<div class="container">
+	<div class="header">
+		<a href="/en/" title="English">English</a>
+	</div>
+	<div class="bandeau">
+		<div class="phrase">
+			<div class="maj">Groupe de recherche de Martin Rochette</div>
+			<div class="big">Photonique nonlinéaire</div>
+		</div>
+		<menu>
+			<a href="/fr/" id="menu_home" title="Accueil" <?php if ($section == "home") echo 'class="select"'; ?>>Accueil</a>
+			<a href="/fr/recherche/projets.php" id="menu_research" title="Recherche" <?php if ($section == "research") echo 'class="select"'; ?>>Recherche</a>
+			<a href="/fr/membres/" id="menu_members" title="Membres" <?php if ($section == "members") echo 'class="select"'; ?>>Membres</a>
+			<a href="/fr/contact/" id="menu_contact" title="Contact" <?php if ($section == "contact") echo 'class="select"'; ?>>Contact</a>
+			<a href="/fr/carrieres/index.php" <?php if ($section == "openings") echo 'class="select"'; ?> title="Carri&egrave;res">Carri&egrave;res</a>
+		</menu>
+		<div class="bande">
+			<div id="bande1" style="display: none;">&nbsp;</div>
+			<div id="bande2" style="display: none;">&nbsp;</div>
+			<div id="bande3" style="display: none;">&nbsp;</div>
+			<div id="bande4" style="display: none;">&nbsp;</div>
+		</div>
+	</div>

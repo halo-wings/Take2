@@ -1,0 +1,15 @@
+
+body
+{
+	background-color: #FFF;
+	font-family: Arial;
+	font-size:11px;
+	margin:5px;
+	color: #3A3A3A;
+}
+table, tr, td, p
+{
+	font-family: Arial;
+	font-size:11px;
+	color: #3A3A3A;
+}

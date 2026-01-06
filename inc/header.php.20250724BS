@@ -1,0 +1,43 @@
+<?php
+require('inc/functions.php');
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="description" CONTENT="">
+<meta name="keywords" CONTENT="">
+<title>McGill</title>
+<link rel="stylesheet" href="inc/css/style.css" type="text/css" charset="utf-8">
+<script type="text/javascript" src="inc/js/jquery-1.8.3.min.js"></script>
+<link rel="stylesheet" href="inc/js/colorbox/example1/colorbox.css" />
+<script src="inc/js/colorbox/colorbox/jquery.colorbox.js"></script>
+
+<?php include('inc/js/script.php'); ?>
+<script src="inc/js/typeface-0.15.js"></script>
+<script src="inc/js/helvetica_lt_std_roman.typeface.js"></script>
+<script src="inc/js/helvetica_lt_std_bold.typeface.js"></script>
+</head>
+<body class="typeface-js body" style="background-color: #CDCDCD;" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div class="container">
+	<div class="header">
+		<a href="">Francais</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">English</a>
+	</div>
+	<div class="bandeau">
+		<div class="phrase">
+			<div class="maj">Martin Rochette's research group</div>
+			<div class="big">Nonlinear photonics</div>
+		</div>
+		<menu>
+			<a href="" id="menu_home">Home</a>
+			<a href="" id="menu_research">Research</a>
+			<a href="" id="menu_members">Members</a>
+			<a href="" id="menu_contact">Contact</a>
+		</menu>
+		<div class="bande">
+			<div id="bande1" style="display: none;">&nbsp;</div>
+			<div id="bande2" style="display: none;">&nbsp;</div>
+			<div id="bande3" style="display: none;">&nbsp;</div>
+			<div id="bande4" style="display: none;">&nbsp;</div>
+		</div>
+	</div>

@@ -1,0 +1,291 @@
+body {
+	color:#3A3A3A;
+	/*font-family: Helvetica LT Std;*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12px;
+	margin: 0;
+}
+
+.body {
+	background: url(../../images/bg_bande.jpg) repeat-x center 58px #CDCDCD;
+}
+
+img {
+	border: 0;
+}
+
+
+	
+
+p {
+	line-height: 18px;
+	margin: 0 0 20px;
+}
+
+li {
+	margin-bottom: 6px;
+}
+
+div {
+	display: inline-block;
+	float: left;
+}
+
+.container {
+	left: 50%;
+	margin-left: -481px;
+	position: relative;
+	width: 961px;
+}
+
+a:link, a:visited {
+	color:#2FCBF9;
+	text-decoration:none;
+}
+a:hover {
+	color: #3A3A3A;
+}
+
+.header {
+	background: url(../../images/bg_entete.jpg);
+	height: 18px;
+	padding: 40px 16px 0 0;
+	text-align: right;
+	width: 945px;
+}
+.header a {
+	color: #A3A3A3;
+	font-size: 11px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.bandeau {
+	height: 166px;
+	width: 961px;
+	overflow: hidden;
+}
+.phrase {
+	clear: both;
+	color: #FFF;
+	margin: 49px 0 0 294px;
+	height: 87px;
+}
+.phrase .maj {
+	clear: both;
+	font-size: 17px;
+	text-transform: uppercase;
+}
+.phrase .big {
+	clear: both;
+	font-size: 40px;
+}
+
+
+menu {
+	clear: both;
+	height: 30px;
+	margin: 0 0 0 319px;
+	padding: 0;
+}
+
+menu a:link, menu a:visited {
+	color: #FFF;
+	display: inline-block;
+	font-size: 11px;
+	font-weight: bold;
+	height: 30px;
+	line-height: 36px;
+	padding: 0 12px;
+	text-decoration:none;
+	text-transform: uppercase;
+}
+menu a:hover, menu a.select {
+	text-decoration:none;
+	color: #2FCBF9;
+}
+
+.container_sous_menu {
+	background-color: #DBDADA;
+	display: block; 
+	height: 29px; 
+	width: 665px; 
+	position: absolute;
+	z-index: 100;
+	zoom: 1;
+	filter: alpha(opacity=70);
+	opacity: 0.7;
+
+}
+
+.sous_menu {
+	margin: 0 0 0 83px;
+}
+.sous_menu a:link, .sous_menu a:visited {
+	color: #878585;
+}
+.sous_menu a:hover, .sous_menu a.select {
+	color: #454545;
+}
+
+.bandeau .bande {
+	position: absolute;
+	width: 100%;
+	z-index: 200;
+}
+#bande1, #bande2, #bande3, #bande4 {
+	background-color: #2FCBF9;
+	height: 3px;
+	position: absolute;
+	top: 0px;
+	width: 32px;
+}
+#bande1 {
+	margin-left: 331px;
+}
+#bande2 {
+	margin-left: 400px;
+}
+#bande3 {
+	margin-left: 482px;
+}
+#bande4 {
+	margin-left: 560px;
+}
+
+
+
+.content {
+	background-color: #FFF;
+	width: 961px;
+}
+
+.content .left {
+	width: 296px;
+	text-align: center;
+}
+
+.content .left .rotator img {
+	width: 296px;
+	height: 336px;
+}
+
+.content .right {
+	width: 665px;
+}
+section, .section {
+	float: left;
+	width: 665px;
+}
+
+.wrapper {
+	padding: 40px 40px 0 10px;
+	min-height: 290px;
+}
+
+.content.home .wrapper {
+	padding-top: 20px;
+}
+
+.content.contact .wrapper {
+	padding-right: 10px !important;
+}
+
+h1 {
+	color: #757272;
+	font-size: 23px;
+	font-weight: normal;
+	margin: 0 0 6px 0;
+}
+
+h2 {
+	color: #23C3F8;
+	font-size: 18px;
+	font-weight: normal;
+	margin: 0 0 6px 0;
+}
+
+#footer {
+	color: #BFBFBF;
+	float: left;
+	font-size: 10px;
+	line-height: 11px;
+	padding: 0 18px 29px 6px;
+	width: 641px;
+}
+
+#footer hr {
+	background-color: #C0C0C0;
+	border: 0 none;
+	color: #C0C0C0;
+	height: 1px;
+	margin: 30px 0 18px 0;
+}
+
+#footer img.logo {
+	float: right;
+}
+#footer p {
+	float: left;
+	width: 500px;
+	margin-top: 0;
+	padding-top: 0;
+}
+
+#publications, #projects {
+	color: #3A3A3A;
+	display: inline-block;
+	font-size: 20px;
+	height: 42px;
+	line-height: 42px;
+	text-decoration:none;
+	text-transform: uppercase;
+	width: 204px;
+	border-top: 1px dashed #9C9C9C;
+	border-bottom: 1px dashed #9C9C9C;
+	margin-top: 20px;
+}
+
+#publications:hover, #projects:hover {
+color: #2FCBF9;
+}
+
+/* MEMBERS */
+
+.content.members .wrapper img {
+	float: right;
+	border: 2px solid #E2E2E2;
+	margin-right: 100px;
+}
+
+img.map {
+	float: right;
+	margin: 0 20px 0 0;
+	border: 2px solid #E2E2E2;
+}
+
+/* PROJECTS */
+
+ul.album-projects {
+	list-style: none;
+	margin: 0 0 40px;
+	padding: 0;
+	height: 75px;
+}
+
+ul.album-projects li {
+	float: left;
+	margin-right: 12px;
+}
+
+ul.album-projects li img.icone_plus {
+	border: 0;
+	position: absolute; 
+	margin: 5px 0 0 101px;
+}
+
+ul.album-projects li img {
+	border: 2px solid #23C5FA;
+}
+
+	

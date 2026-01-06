@@ -1,0 +1,47 @@
+<?php
+function SQL($Query, $params = []) {
+    static $conn;
+    if (!isset($conn)) {
+        $conn = new mysqli("localhost", "photon", "kZRSAdf6ZHnp0KoKlcls", "mcgill_mcgill");
+        if ($conn->connect_error) {
+            echo "<font color='#ff0000'>" . $conn->errno . ": " . $conn->error . "</font><BR>";
+            return false;
+        }
+        $conn->set_charset("utf8"); // Good practice for character encoding
+    }
+
+    if (empty($params)) {
+        // Legacy non-prepared query (avoid using this for user input)
+        $result = $conn->query($Query);
+        if (!$result) {
+            echo "<font color='#ff0000'>" . $conn->errno . ": " . $conn->error . "</font><BR>";
+        }
+        return $result;
+    } else {
+        // Prepared statement for security
+        $stmt = $conn->prepare($Query);
+        if (!$stmt) {
+            echo "<font color='#ff0000'>Prepare failed: " . $conn->error . "</font><BR>";
+            return false;
+        }
+        if (!empty($params)) {
+            $types = str_repeat('s', count($params)); // Assume strings; change to 'i' for ints if needed
+            $stmt->bind_param($types, ...$params);
+        }
+        if (!$stmt->execute()) {
+            echo "<font color='#ff0000'>Execute failed: " . $stmt->error . "</font><BR>";
+            $stmt->close();
+            return false;
+        }
+        $result = $stmt->get_result(); // For SELECT queries
+        $stmt->close();
+        return $result;
+    }
+}
+
+function removeaccents($string) {
+    $string = strtr($string, "¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿¿",
+    "aaaaaaaaaaaaooooooooooooeeeeeeeecciiiiiiiiuuuuuuuuynn" );
+    return $string;
+}
+?>

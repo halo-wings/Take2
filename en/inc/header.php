@@ -1,0 +1,42 @@
+<?php
+include($_SERVER['DOCUMENT_ROOT']."/inc/functions.php");
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title><?php if (isset($title) && $title != "") { echo $title; } else { echo "Martin Rochette's research group"; } ?></title>
+<meta name="description" content="<?php if (isset($meta_description) && $meta_description != "") { echo $meta_description; } else { echo "Martin Rochette's research group"; } ?>" />
+<meta name="keywords" content="<?php if (isset($meta_keywords) && $meta_keywords != "") { echo $meta_keywords; } else { echo "Martin Rochette"; } ?>" />
+
+<link rel="stylesheet" href="/inc/css/style.css" type="text/css" />
+<script type="text/javascript" src="/inc/js/jquery-1.8.3.min.js"></script>
+<link rel="stylesheet" href="/inc/js/colorbox/example1/colorbox.css" />
+<script src="/inc/js/colorbox/colorbox/jquery.colorbox.js"></script>
+<?php include($_SERVER['DOCUMENT_ROOT']."/inc/js/script.php"); ?>
+</head>
+
+<body class="body">
+<div class="container">
+	<div class="header">
+		<a href="/fr/" title="Fran&ccedil;ais">Fran&ccedil;ais</a>
+	</div>
+	<div class="bandeau">
+		<div class="phrase">
+			<div class="maj">Martin Rochette's research group</div>
+			<div class="big">Nonlinear photonics</div>
+		</div>
+		<menu>
+			<a href="/en/" id="menu_home" title="Home" <?php if ($section == "home") echo 'class="select"'; ?>>Home</a>
+			<a href="/en/research/projects.php" id="menu_research" title="Research" <?php if ($section == "research") echo 'class="select"'; ?>>Research</a>
+			<a href="/en/members/" id="menu_members" title="Members" <?php if ($section == "members") echo 'class="select"'; ?>>Members</a>
+			<a href="/en/contact/" id="menu_contact" title="Contact" <?php if ($section == "contact") echo 'class="select"'; ?>>Contact</a>
+			<a href="/en/openings/index.php" <?php if ($section == "openings") echo 'class="select"'; ?> title="Openings">Openings</a>
+		</menu>
+		<div class="bande">
+			<div id="bande1" style="display: none;">&nbsp;</div>
+			<div id="bande2" style="display: none;">&nbsp;</div>
+			<div id="bande3" style="display: none;">&nbsp;</div>
+			<div id="bande4" style="display: none;">&nbsp;</div>
+		</div>
+	</div>

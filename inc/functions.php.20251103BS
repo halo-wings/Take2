@@ -1,0 +1,29 @@
+<?php 	
+	function SQL($Query)
+	{	static $connection;
+
+		if ( ! isset($connection) )
+		{	$connection = mysql_connect("localhost", "photon", "kZRSAdf6ZHnp0KoKlcls");
+			if ( $connection == false )
+			{	echo "<font color='#ff0000'>" . mysql_errno() . ": " . mysql_error() . "</font><BR>";
+			}
+			mysql_select_db("'mcgill_mcgill'",$connection);
+		}
+	
+		#echo "-$Query-";
+		$result = mysql_query($Query);
+		if ( $result == false )
+		{	echo "<font color='#ff0000'>" . mysql_errno() . ": " . mysql_error() . "</font><BR>";
+		}
+	
+		return $result;
+	}
+
+	function removeaccents($string)
+	{
+		$string = strtr($string,  "ÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ",
+			"aaaaaaaaaaaaooooooooooooeeeeeeeecciiiiiiiiuuuuuuuuynn" ); 
+		return $string; 
+	} 
+
+?>

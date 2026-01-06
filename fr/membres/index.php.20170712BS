@@ -1,0 +1,186 @@
+<?php
+$langue = 'fr';
+$section = "members";
+$sous_section = "";
+$title = "";
+$meta_description = "";
+$meta_keywords = "";
+
+include($_SERVER['DOCUMENT_ROOT']."/".$langue."/inc/header.php");
+?>
+	<div class="content members">
+		<div class="left">
+			<img src="../../images/img_gauche_members.jpg" alt="Membres" />
+			<a href="../recherche/projets.php" id="projects" title="Projets">Projets</a>
+			<a href="../recherche/publications.php" id="publications" title="Publications">Publications</a>
+		</div>
+		<div class="right">
+			<div class="container_sous_menu" style="display: none;">
+				<?php include($_SERVER['DOCUMENT_ROOT'].'/'.$langue.'/inc/menu.php'); ?>
+			</div>
+			<section>
+				<div class="wrapper">
+				<h1>Membres</h1>
+				<h2>Chef de groupe</h2>
+				<p><strong>Martin Rochette, PhD, Eng</strong><br />
+				Professeur associ&eacute;<br />
+				T&eacute;l&eacute;phone : 514 398-3037<br />
+				Fax : 514 398-4470<br />
+				<a href="mailto:martin.rochette@mcgill.ca">martin.rochette@mcgill.ca</a></p>
+				
+				<h2>&Eacute;tudiants</h2>
+				
+				<!--<img src="/images/membres/alaa.jpg" alt="Alaa Al Kadry" />
+				<p><strong>Alaa Al Kadry, chercheur post-doctoral</strong><br />
+				Broadband and mid-infrared sources<br />
+				MSc, Dept. of Physics, University of Waterloo, 2009<br />
+				BSc, Dept. of physics, Beirut Arab University, 2006<br />
+				<a href="mailto:alaa.al-kadry@mail.mcgill.ca">alaa.al-kadry@mail.mcgill.ca</a></p>-->
+				
+
+				<!--<img src="/images/membres/raja.jpg" alt="Raja Ahmad" />
+				<p><strong>Raja Ahmad,  &eacute;tudiant au PhD</strong><br />
+				Application of highly nonlinear chalcogenide nanowires<br />
+				MEng, Dept. of Electrical and Computer Engineering<br>
+				McGill University, fast-tracked to PhD in 2009<br />
+				<a href="mailto:raja.ahmad@mail.mcgill.ca">raja.ahmad@mail.mcgill.ca</a></p>
+
+
+				<p><strong>Chams Baker, &eacute;tudiant au PhD </strong><br />
+				Development of nonlinear devices based on chalcogenide glass<br />
+				MEng, Dept. of Electrical and Computer Engineering, McGill University, 2009<br />
+				BEng, Dept. of Electrical and Computer Engineering, Concordia University, 2007<br />
+				<a href="mailto:chams.baker@mail.mcgill.ca">chams.baker@mail.mcgill.ca</a></p>-->
+				
+				
+				
+				<!--<img src="/images/membres/yan.jpg" alt="Yan Lang" />
+				<p><strong>Yan Lang, &eacute;tudiant au PhD</strong><br />
+				Self-pulsating sources and fiber lasers<br />
+				MEng, College of Precision Instrument and Opto-electronics Engineering, Tianjin University, 2014<br />
+				BSc, College of Precision Instrument and Opto-electronics Engineering, Tianjin University, 2011<br />
+				<a href="mailto:yang.lan2@mail.mcgill.ca">yang.lan2@mail.mcgill.ca</a></p>-->
+				
+
+				<!--<img src="/images/membres/thibault.jpg" alt="Thibault North" />
+				<p><strong>Thibault North,  &eacute;tudiant au PhD</strong><br />
+				Self-pulsating laser sources<br />
+				MEng, Dept. of Engineering, University of Applied Sciences and Art of Western Switzerland, 2011<br />
+				BEng, Dept. of Microengineering, Haute &Eacute;cole d.Ing&eacute;nierie et de Gestion du Canton de Vaud, 2009<br />
+				<a href="mailto:thibault.north@mail.mcgill.ca">thibault.north@mail.mcgill.ca</a></p>
+				
+				<img src="/images/membres/ali.jpg" alt="Ali Salehiomran" />
+				<p><strong>Ali Salehiomran, &eacute;tudiant au PhD </strong><br />
+				Optical signal processing and lasers<br />
+				MSc, Dept. of Electrical Engineering, Sharif university of technology, 2009<br />
+				BSc, Dept. of Electrical Engineering, Sharif university of technology, 2006<br />
+				<a href="mailto:ali.salehiomran@mail.mcgill.ca">ali.salehiomran@mail.mcgill.ca</a></p>
+				
+				<img src="/images/membres/damian.jpg" alt="Damian Marek" />
+				<p><strong>Damian Marek, &eacute;tudiant au MEng</strong><br />
+				Nonlinear surface plasmons<br />
+				BEng, Dept. of Electrical and Computer Engineering, McGill University, 2012<br />
+				<a href="mailto:damian.marek@mail.mcgill.ca">damian.marek@mail.mcgill.ca</a></p>-->
+				
+				<!--<img src="/images/membres/sida.jpg" alt="Si Da Xing" />
+				<p><strong>Si Da Xing, &eacute;tudiant au MEng</strong><br />
+				Enhancing second-order nonlinearities in glasses<br />
+                BEng, Dept. of Electrical and Computer Engineering, McGill University, 2013<br />
+				<a href="mailto:xing.sida@mail.mcgill.ca">xing.sida@mail.mcgill.ca</a></p>-->
+				
+				<img src="/images/membres/nurmemet.jpg" alt="Nurmemet Abdukerim" />
+				<p><strong>Nurmemet Abdukerim, &eacute;tudiant au PhD</strong><br />
+				All-fiber nonlinear sources<br />
+				MEng, School of Optoelectronic Information, University of Electronic Science and Technology of China, 2012<br />
+				BSc, School of Optoelectronic Information, University of Electronic Science and Technology of China, 2010<br />
+				<a href="mailto:nurmemet.abudukelimu@mail.mcgill.ca">nurmemet.abudukelimu@mail.mcgill.ca</a></p>
+				
+				<img src="/images/membres/imtiaz.jpg" alt="Imtiaz Alamgir" />
+				<p><strong>Imtiaz Alamgir, &eacute;tudiant au PhD</strong><br />
+				Sources laser &agrave; fibre<br />
+				MSc, Karlsruhe School of Optics & Photonics, Karlsruhe Institute of Technology, Germany, 2015<br />
+BSc, Dept. of Electrical and Electronic Engineering, Ahsanullah University of Science and Technology, Bangladesh, 2016
+<br />
+				<a href="mailto:md.alamgir@mail.mcgill.ca">md.alamgir@mail.mcgill.ca</a></p>
+				
+				<img src="/images/membres/cameron.jpg" alt="Cameron Berge" />
+				<p><strong>Cameron Berge, &eacute;tudiant au PhD</strong><br />
+				Lasers &agrave; fibre pour l'infrarouge moyen<br />
+				MEng, Dept. of Electrical and Computer Engineering, McGill University, 2016<br />
+				BEng, Dept. of Electrical and Computer Engineering, McGill University, 2015<br />
+				<a href="mailto:cameron.berge@mail.mcgill.ca">cameron.berge@mail.mcgill.ca</a></p>
+				
+				<img src="/images/membres/imrul.jpg" alt="Imrul Kayes" />
+				<p><strong>Imrul Kayes, &eacute;tudiant au PhD</strong><br />
+				Optical frequency combs<br />
+				BSc, Dept. of Electrical & Electronic Engineering, Bangladesh University of Engineering & Technology, 2012<br />
+				<a href="mailto:md.kayes@mail.mcgill.ca">md.kayes@mail.mcgill.ca</a></p>
+				<p>&nbsp;</p>
+				
+				<img src="/images/membres/lizhu.jpg" alt="Lizhu Li" />
+				<p><strong>Lizhu Li, &eacute;tudiant au PhD</strong><br />
+				Wavelength conversion to the mid-infrared<br />
+				MSc, Dept. of Physics, Dalian University of Technology, 2012<br />
+				BSc, Dept. of Physics, Dalian University of Technology, 2009<br />
+				<a href="mailto:lizhu.li@mail.mcgill.ca">lizhu.li@mail.mcgill.ca</a></p>				
+				<p>&nbsp;</p>
+				
+				<img src="/images/membres/mohsen.jpg" alt="Mohsen Rezaei" />
+				<p><strong>Mohsen Rezaei, &eacute;tudiant au PhD</strong><br />
+				Composants &agrave; fibre optique<br />
+                MSc, Dept. of Electrical and Computer Engineering, Isfahan University of Technology, Iran, 2016<br />
+				BSc, Dept. of Electrical and Computer Engineering, Isfahan University of Technology, Iran, 2013<br />
+				<a href="mailto:mohsen.rezaei@mail.mcgill.ca">mohsen.rezaei@mail.mcgill.ca</a></p>
+				
+				<img src="/images/membres/kaixuan.jpg" alt="Kaixuan Zhang" />
+				<p><strong>Kaixuan Zhang, &eacute;tudiant au PhD</strong><br />
+				Micro-r&eacute;sonateurs<br />
+				BEng, College of Optical Science and Engineering, Zhejiang University, 2015<br />
+				<a href="mailto:kaixuan.zhang@mail.mcgill.ca">kaixuan.zhang@mail.mcgill.ca</a></p>				
+				<p>&nbsp;</p>
+				
+				<img src="/images/membres/wasim.jpg" alt="Wasim Firdaus" />
+				<p><strong>Wasim Firdaus, &eacute;tudiant au MEng</strong><br />
+				Pulsed fiber lasers with high duty-cycle <br />
+				BSc, Dept. of Electrical and Electronic Engineering, Islamic University of Technology, Bangladesh, 2015<br />
+				<a href="mailto:md.lashkor@mail.mcgill.ca">md.lashkor@mail.mcgill.ca</a></p>
+				<p>&nbsp;</p>
+				
+				<img src="/images/membres/weixuan.jpg" alt="Weixuan Lin" />
+				<p><strong>Weixuan Lin, &eacute;tudiant au MEng</strong><br />
+				High-power fiber lasers<br />
+				BSc, Dept. of Applied Physics, Shantou University, 2016<br />
+				<a href="mailto:weixuan.lin@mail.mcgill.ca">weixuan.lin@mail.mcgill.ca</a></p>
+				<p>&nbsp;</p>
+				
+				<img src="/images/membres/farzan.jpg" alt="Farzan Tavakoli" />
+				<p><strong>Farzan Tavakoli, &eacute;tudiant au Meng</strong><br />
+				Polarization properties of highly nonlinear media<br />
+				BSc, Dept. of Electrical Engineering, Iran University of Science and Technology (IUST), 2014<br />
+				BSc. (minor), Dept. of Physics, Iran University of Science and Technology (IUST), 2014<br />
+				<a href="mailto:farzan.tavakoli@mail.mcgill.ca">farzan.tavakoli@mail.mcgill.ca</a></p>
+				
+				<img src="/images/membres/jingye.jpg" alt="Jingye Yuan" />
+				<p><strong>Jingye Yuan (Iris), &eacute;tudiante au MEng</strong><br />
+				BSc, Dept. of Physics and Electronics, Central South University, China, 2015<br />
+				<a href="mailto:jingye.yuan@mail.mcgill.ca">jingye.yuan@mail.mcgill.ca</a></p>
+				
+				<!--<p>&nbsp;</p>
+				<h2>&Eacute;tudiants collaborateurs </h2>
+				
+				<img src="/images/membres/francis.jpg" alt="Francis Vanier" />
+				<p><strong>Francis Vanier, &eacute;tudiant au PhD</strong><br />
+				&Eacute;cole Polytechnique de Montr&eacute;al<br />
+				Nonlinear resonators<br />
+				MASc, Dept. of Physics Engineering, &Eacute;cole Polytechnique de Montr&eacute;al, 2012<br />
+				BEng, Dept. of Physics Engineering, &Eacute;cole Polytechnique de Montr&eacute;al, 2009<br />
+				<a href="mailto:francis-2.vanier@polymtl.ca">francis-2.vanier@polymtl.ca</a></p>
+				
+				-->
+
+				</div>
+			</section>
+			
+<?php
+include($_SERVER['DOCUMENT_ROOT'].'/'.$langue.'/inc/footer.php');
+?>

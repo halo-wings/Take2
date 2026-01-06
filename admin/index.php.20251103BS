@@ -1,0 +1,97 @@
+<?php
+require('../inc/functions.php');
+session_start();
+session_unset();
+session_destroy();
+
+// on teste si le visiteur a soumis le formulaire de connexion
+if (isset($_POST['connexion']) && $_POST['connexion'] == 'Se connecter') {
+    if ((isset($_POST['login']) && !empty($_POST['login'])) && (isset($_POST['pass']) && !empty($_POST['pass']))) {
+
+		// on teste si une entrée de la base contient ce couple login / pass
+		//$s_sql =  sprintf("SELECT count(id) as nbclient, id FROM login WHERE username=MD5('%s') AND password=MD5('%s') group by id", $_POST['login'], $_POST['pass'] );
+		$s_sql =  sprintf("SELECT password,id FROM login WHERE username='%s'", $_POST['login'] );
+		//echo $s_sql;
+		//exit;
+		$result = SQL($s_sql);
+		//if (!$result) {
+   		//die('Could not query:' . mysql_error());}
+		$numrow = mysql_num_rows($result);
+		
+        // si on obtient une réponse, alors l'utilisateur est un membre
+        if ($numrow == 1) {
+			$data = mysql_fetch_array($result);
+			
+			// trouver si le mot de passe est bon
+			require '../inc/phpass-0.3/PasswordHash.php';
+			$t_hasher = new PasswordHash(8, FALSE);
+			$check = $t_hasher->CheckPassword($_POST['pass'], $data[0]);
+			/*$check = $t_hasher->HashPassword($_POST['pass'], $data[0]);
+			$s_sql =  sprintf("UPDATE login SET password = '".$check."' WHERE id = 1");
+			$result = SQL($s_sql);
+			exit;*/
+			
+			if ($check)
+			{
+				session_start();
+				$_SESSION['login'] = $_POST['login'];
+				$_SESSION['idClient'] = $data[1];
+				//header('Location:adminMenus.php');
+				?>
+				<html>
+				<body onload="window.location='adminMenus.php';">
+				&nbsp;
+				</body>
+				</html>
+				<?php
+				exit();
+			}
+			else
+			{
+				$erreur = 'Mauvais mot de passe.';
+			}
+        }
+        // si on ne trouve aucune réponse, le visiteru s'est trompé soit dans son login, soit dans son mot de passe
+        elseif ($numrow == 0) {
+            $erreur = 'Compte non reconnu.';
+        }
+        // sinon, alors la, il y a un gros problème :)
+        else {
+            $erreur = 'Problème dans la base de données : plusieurs membres ont les mêmes identifiants de connexion.';
+        }
+    }
+    else {
+        $erreur = 'Au moins un des champs est vide.';
+    }
+}
+?>
+
+<?php
+
+$categorie="-1";
+
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ADMIN - McGill</title>
+<link rel="stylesheet" type="text/css" href="../inc/css/style.css" />
+<style type="text/css">
+body { font-size: 18px;}
+</style>
+</head>
+<body bgcolor="#CDCDCD">
+<center>
+<section style="padding: 0; float: none; width: 934px;">
+  <div style="width: 934px; margin: 0 auto; background-color: #fff; text-align: center;">
+      <div class="logo" style="padding: 20px; background: url(../images/logo_mcgill.jpg) no-repeat 20px 20px; width: 118px; height: 30px;">&nbsp;</div>
+	  
+		<br /><br /><br /><br /><br /><br />
+			<form name="formConnexion" action="index.php" method="post">Username : <input type="text" value="" name="login">&nbsp;&nbsp;&nbsp;&nbsp;Password : <input type="password" value="" name="pass">&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="connexion"  value="Se connecter">
+			<b><?php if (isset($erreur)) echo '<br /><br />'.$erreur;?></b>
+			</form>
+	
+	  
+	
+<?php require("general/pied.php")?>
